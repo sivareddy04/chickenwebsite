@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Fresh Eggs & Poultry - Vijayawada | Your Farm Name</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>/* General Body and Typography */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f8f8f8;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+    color: #2c5f2d; /* Dark green for headings */
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 3.5em;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.5em;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 80px;
+    height: 4px;
+    background-color: #78a300; /* Vibrant green accent */
+    border-radius: 2px;
+}
+
+h3 {
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+a {
+    color: #78a300;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #5b7f00;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #78a300; /* Vibrant green */
+    color: #fff;
+    border: 2px solid #78a300;
+}
+
+.btn-primary:hover {
+    background-color: #5b7f00;
+    border-color: #5b7f00;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #2c5f2d;
+    border: 2px solid #2c5f2d;
+}
+
+.btn-secondary:hover {
+    background-color: #2c5f2d;
+    color: #fff;
+}
+
+.btn-link {
+    display: inline-flex;
+    align-items: center;
+    color: #78a300;
+    font-weight: 600;
+    font-size: 1.1em;
+    margin-top: 20px;
+}
+
+.btn-link .arrow {
+    margin-left: 8px;
+    font-size: 1.2em;
+    transition: margin-left 0.3s ease;
+}
+
+.btn-link:hover .arrow {
+    margin-left: 15px;
+}
+
+/* Header */
+header {
+    background-color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #2c5f2d;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: #333;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #78a300;
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+}
+
+.header-icons a {
+    margin-left: 20px;
+    position: relative;
+}
+
+.header-icons img {
+    height: 24px;
+    width: 24px;
+}
+
+.header-icons .cart-icon span {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #ff5722; /* Orange accent */
+    color: #fff;
+    font-size: 0.7em;
+    border-radius: 50%;
+    padding: 3px 6px;
+    line-height: 1;
+}
+
+/* Search Overlay */
+.search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.search-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.search-overlay input {
+    width: 60%;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.5em;
+    background-color: #fff;
+    color: #333;
+    outline: none;
+}
+
+.search-overlay .close-search {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: #fff;
+    font-size: 2.5em;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.search-overlay .close-search:hover {
+    color: #78a300;
+}
+
+/* Cart Sidebar */
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -350px; /* Hidden by default */
+    width: 350px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -3px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.3s ease;
+}
+
+.cart-sidebar.active {
+    right: 0;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-header h3 {
+    margin: 0;
+    color: #2c5f2d;
+    font-size: 1.5em;
+}
+
+.cart-header .close-cart {
+    font-size: 2em;
+    cursor: pointer;
+    color: #777;
+    transition: color 0.3s ease;
+}
+
+.cart-header .close-cart:hover {
+    color: #ff0000;
+}
+
+.cart-items {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.empty-cart-message {
+    text-align: center;
+    color: #777;
+    margin-top: 50px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #eee;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.cart-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.cart-item-details {
+    flex-grow: 1;
+}
+
+.cart-item-details h4 {
+    margin: 0 0 5px 0;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.cart-item-details .cart-item-price {
+    font-weight: 600;
+    color: #78a300;
+}
+
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.cart-item-quantity button {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    padding: 0 8px;
+    cursor: pointer;
+    color: #2c5f2d;
+    transition: color 0.2s ease;
+}
+
+.cart-item-quantity button:hover {
+    color: #78a300;
+}
+
+.cart-item-quantity span {
+    padding: 0 10px;
+    font-weight: 600;
+}
+
+.cart-item-remove {
+    margin-left: 15px;
+    background: none;
+    border: none;
+    color: #ff0000;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.cart-item-remove:hover {
+    color: #cc0000;
+}
+
+
+.cart-footer {
+    padding: 20px;
+    border-top: 1px solid #eee;
+    text-align: right;
+}
+
+.cart-total {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #2c5f2d;
+    margin-bottom: 15px;
+}
+
+.checkout-btn {
+    width: 100%;
+}
+
+/* Overlay for sidebar */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1090;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* Hero Section */
+.hero {
+    background: url('../images/hero_bg.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    padding: 100px 0;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column for text by default */
+    gap: 40px;
+    align-items: center;
+}
+
+.hero-text h1 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 4em;
+}
+
+.hero-text p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+/* Products Section */
+.products-section {
+    padding: 80px 0;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.product-card {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    max-width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.product-card h3 {
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #2c5f2d;
+}
+
+.product-card p {
+    font-size: 0.95em;
+    color: #666;
+    min-height: 40px; /* Ensures consistent card height */
+}
+
+.price-add {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.price {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #78a300;
+}
+
+.product-card button {
+    background-color: #2c5f2d;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+}
+
+.product-card button:hover {
+    background-color: #78a300;
+}
+
+.poultry-section .product-card button {
+    background-color: #ff5722; /* Orange for enquiry buttons */
+}
+
+.poultry-section .product-card button:hover {
+    background-color: #e64a19;
+}
+
+.view-all {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* About Us Section */
+.about-us-section {
+    padding: 80px 0;
+    background-color: #fefefe;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column by default */
+    gap: 50px;
+    align-items: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-text h2 {
+    text-align: left; /* Override global h2 alignment */
+    margin-bottom: 25px;
+}
+
+.about-text h2::after {
+    left: 0;
+    transform: translateX(0);
+}
+
+/* Delivery Section */
+.delivery-section {
+    background-color: #e6f2e6; /* Light green background */
+    padding: 80px 0;
+    text-align: center;
+}
+
+.delivery-section h2 {
+    color: #2c5f2d;
+}
+
+.delivery-section p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column by default */
+    gap: 50px;
+}
+
+.contact-info h2,
+.delivery-form-container h2 {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.contact-info h2::after,
+.delivery-form-container h2::after {
+    left: 0;
+    transform: translateX(0);
+}
+
+.contact-info p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.contact-info p strong {
+    color: #2c5f2d;
+}
+
+.map-placeholder {
+    margin-top: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.map-placeholder iframe {
+    display: block; /* Remove extra space below iframe */
+}
+
+.delivery-form .form-group {
+    margin-bottom: 20px;
+}
+
+.delivery-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2c5f2d;
+}
+
+.delivery-form input[type="text"],
+.delivery-form input[type="tel"],
+.delivery-form input[type="email"],
+.delivery-form select,
+.delivery-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.delivery-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.delivery-form input:focus,
+.delivery-form select:focus,
+.delivery-form textarea:focus {
+    border-color: #78a300;
+    outline: none;
+    box-shadow: 0 0 5px rgba(120, 163, 0, 0.3);
+}
+
+.form-message {
+    margin-top: 15px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background-color: #2c5f2d; /* Dark green */
+    color: #fff;
+    padding: 60px 0 20px 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #fff;
+}
+
+.footer-logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.footer-links h3,
+.footer-contact h3,
+.footer-social h3 {
+    color: #78a300; /* Vibrant green for footer headings */
+    margin-bottom: 20px;
+    font-size: 1.3em;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #fff;
+    opacity: 0.8;
+}
+
+.footer-links ul li a:hover {
+    opacity: 1;
+    color: #78a300;
+}
+
+.footer-contact p {
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.footer-contact a {
+    color: #fff;
+    opacity: 0.8;
+}
+.footer-contact a:hover {
+    opacity: 1;
+    color: #78a300;
+}
+
+
+.footer-social a {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.footer-social img {
+    height: 30px;
+    width: 30px;
+    transition: transform 0.3s ease;
+}
+
+.footer-social img:hover {
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 0.9em;
+    opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .hero-grid {
+        grid-template-columns: 1.2fr 0.8fr; /* Text and image */
+    }
+
+    .hero-image {
+        /* Add background image to the grid item on larger screens */
+        background: url('../images/hero_chickens.png') no-repeat right center/contain;
+        min-height: 400px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr 1.2fr; /* Contact info and form */
+    }
+
+    h1 {
+        font-size: 4.5em;
+    }
+
+    .hero-text {
+        text-align: left;
+    }
+}
+
+@media (max-width: 992px) {
+    h1 {
+        font-size: 3em;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    .header-content {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .logo, nav, .header-icons {
+        flex-basis: 100%;
+        text-align: center;
+        margin-top: 15px;
+    }
+    nav ul {
+        justify-content: center;
+    }
+    nav ul li {
+        margin: 0 15px;
+    }
+    .hero {
+        padding: 80px 0;
+        min-height: 400px;
+    }
+    .hero-text {
+        text-align: center;
+    }
+    .hero-image {
+        display: none; /* Hide image on smaller screens if desired */
+    }
+    .product-list, .footer-content {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .about-grid, .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .about-text h2, .contact-info h2, .delivery-form-container h2 {
+        text-align: center;
+    }
+    .about-text h2::after, .contact-info h2::after, .delivery-form-container h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 15px;
+    }
+    h1 {
+        font-size: 2.5em;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.8em;
+    }
+    .logo span {
+        font-size: 1.5em;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+    }
+    nav ul li {
+        margin: 0;
+    }
+    .header-icons {
+        margin-top: 20px;
+        justify-content: center;
+    }
+    .header-icons a {
+        margin: 0 10px;
+    }
+    .search-overlay input {
+        width: 90%;
+        font-size: 1.2em;
+    }
+    .cart-sidebar {
+        width: 100%; /* Full width on very small screens */
+    }
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .footer-logo, .footer-links, .footer-contact, .footer-social {
+        justify-content: center;
+    }
+    .footer-social {
+        margin-top: 20px;
+    }
+}</style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="images/farm_logo_white.png" alt="Your Farm Logo">
+                <span>Farm Fresh</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Our Farm</a></li>
+                    <li><a href="#products">Eggs</a></li>
+                    <li><a href="#poultry">Poultry</a></li>
+                    <li><a href="#delivery-section-id">Delivery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <a href="#" class="search-icon"><img src="images/search_icon.png" alt="Search"></a>
+                <a href="#" class="cart-icon"><img src="images/cart_icon.png" alt="Cart"><span>0</span></a>
+            </div>
+        </div>
+        <div class="search-overlay">
+            <input type="text" id="searchInput" placeholder="Search products...">
+            <span class="close-search">×</span>
+        </div>
+    </header>
+
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <span class="close-cart">×</span>
+        </div>
+        <div class="cart-items">
+            <p class="empty-cart-message">Your cart is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">Total: <span id="cartTotal">₹ 0.00</span></div>
+            <button class="btn btn-primary checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+    <div class="overlay"></div>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <h1>Farm Fresh <br> Eggs & Poultry</h1>
+                    <p>Direct from Our Happy Hens in Vijayawada to Your Table and Farm.</p>
+                    <a href="#products" class="btn btn-primary">Shop Eggs & Poultry</a>
+                </div>
+                <div class="hero-image"></div>
+            </div>
+        </section>
+
+        <section id="products" class="products-section">
+            <div class="container">
+                <h2>Our Fresh Eggs</h2>
+                <div class="product-list">
+                    <div class="product-card" data-category="eggs" data-name="farm fresh white eggs">
+                        <img src="images/egg_pack_12.png" alt="Farm Fresh White Eggs 12 Pc">
+                        <h3>Farm Fresh White Eggs</h3>
+                        <p>Naturally laid, nutrient-rich white eggs.</p>
+                        <div class="price-add">
+                            <span class="price" data-price="75.00">₹ 75.00</span>
+                            <button class="add-to-cart-btn">Add to cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="eggs" data-name="organic brown eggs">
+                        <img src="images/egg_pack_6_brown.png" alt="Organic Brown Eggs 6 Pc">
+                        <h3>Organic Brown Eggs</h3>
+                        <p>From free-range hens, packed with goodness.</p>
+                        <div class="price-add">
+                            <span class="price" data-price="90.00">₹ 90.00</span>
+                            <button class="add-to-cart-btn">Add to cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="eggs" data-name="jumbo egg tray">
+                        <img src="images/egg_tray_30.png" alt="Jumbo Egg Tray 30 Pc">
+                        <h3>Jumbo Egg Tray (30 Pc)</h3>
+                        <p>Economical pack for your family's needs.</p>
+                        <div class="price-add">
+                            <span class="price" data-price="180.00">₹ 180.00</span>
+                            <button class="add-to-cart-btn">Add to cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="eggs" data-name="desi country eggs">
+                        <img src="images/naatu_kodi_guddu.png" alt="Desi Country Eggs 6 Pc">
+                        <h3>Desi Country Eggs (6 Pc)</h3>
+                        <p>Traditional *Naatu Kodi Guddu* for authentic taste.</p>
+                        <div class="price-add">
+                            <span class="price" data-price="110.00">₹ 110.00</span>
+                            <button class="add-to-cart-btn">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="view-all">
+                    <a href="#products" class="btn-link">View all eggs <span class="arrow">→</span></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="poultry" class="products-section poultry-section">
+            <div class="container">
+                <h2>Our Healthy Poultry</h2>
+                <div class="product-list">
+                    <div class="product-card" data-category="poultry" data-name="desi country chicks">
+                        <img src="images/desi_chicks.png" alt="Desi Chicks">
+                        <h3>Desi (Country) Chicks</h3>
+                        <p>Healthy, active day-old or week-old desi chicks. Ready for your farm.</p>
+                        <div class="price-add">
+                            <span class="price" data-price="50.00">₹ 50.00 / chick</span>
+                            <button class="enquire-now-btn">Enquire Now</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="poultry" data-name="broiler chicks">
+                        <img src="images/broiler_chicks.png" alt="Broiler Chicks">
+                        <h3>Broiler Chicks</h3>
+                        <p>Fast-growing broiler chicks, ideal for commercial meat production.</p>
+                        <div class="price-add">
+                            <span class="price" data-price="40.00">₹ 40.00 / chick</span>
+                            <button class="enquire-now-btn">Enquire Now</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="poultry" data-name="layer hens ready to lay">
+                        <img src="images/layer_hens.png" alt="Layer Hens">
+                        <h3>Layer Hens (Ready to Lay)</h3>
+                        <p>Productive layer hens, ready to start laying fresh eggs for your farm.</p>
+                        <div class="price-add">
+                            <span class="price" data-price="350.00">₹ 350.00 / hen</span>
+                            <button class="enquire-now-btn">Enquire Now</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="poultry" data-name="adult desi rooster">
+                        <img src="images/desi_rooster.png" alt="Adult Desi Rooster">
+                        <h3>Adult Desi Rooster</h3>
+                        <p>Strong and healthy desi roosters for breeding or meat.</p>
+                        <div class="price-add">
+                            <span class="price" data-price="600.00">₹ 600.00 / bird</span>
+                            <button class="enquire-now-btn">Enquire Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="view-all">
+                    <a href="#contact" class="btn-link">Contact for Bulk Poultry <span class="arrow">→</span></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-us-section">
+            <div class="container about-grid">
+                <div class="about-image">
+                    <img src="images/happy_hens_farm.jpg" alt="Happy Hens at Our Farm">
+                </div>
+                <div class="about-text">
+                    <h2>Our Commitment to Quality & Healthy Birds</h2>
+                    <p>At **[Your Farm Name]**, nestled in the serene outskirts of Vijayawada, we are dedicated to raising healthy poultry and providing the freshest, most nutritious eggs directly to your home. Our hens roam freely in a clean environment, fed with natural, wholesome grains, ensuring superior quality in every egg.</p>
+                    <p>Beyond eggs, we also offer a variety of healthy chicks and adult poultry raised with utmost care and ethical practices. Whether you're looking for egg layers, broilers, or traditional desi birds, we prioritize the well-being of our birds, which translates to healthier, thriving poultry for your farm or home. Experience the difference of farm-fresh goodness and healthy birds!</p>
+                    <a href="#" class="btn btn-secondary">Learn More About Our Farm</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="delivery-section-id" class="delivery-section">
+            <div class="container">
+                <h2>Fast & Fresh Delivery in Vijayawada</h2>
+                <p>We ensure your eggs and poultry reach you quickly and safely. Enjoy convenient home delivery across Vijayawada and nearby areas.</p>
+                <a href="#contact" class="btn btn-primary">Check Delivery Areas</a>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container contact-grid">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <p>Have a question or need to place a bulk order for poultry? Reach out to us!</p>
+                    <p>📞 **Phone:** <a href="tel:+919876543210">+91 98765 43210</a></p>
+                    <p>📧 **Email:** <a href="mailto:info@yourfarmeggs.in">info@yourfarmeggs.in</a></p>
+                    <p>📍 **Address:** [Your Farm Name], [Your Farm Address], Vijayawada, Andhra Pradesh, India</p>
+                    <div class="map-placeholder">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15302.26189912061!2d80.60942540000001!3d16.516962299999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35f0a0d4c1e4c9%3A0x7d2b6b5d9d7c0f1e!2sVijayawada%2C%20Andhra%20Pradesh%2C%20India!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="delivery-form-container">
+                    <h2>Place Your Delivery Order / Enquiry</h2>
+                    <form id="deliveryForm" class="delivery-form">
+                        <div class="form-group">
+                            <label for="fullName">Full Name:</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneNumber">Phone Number:</label>
+                            <input type="tel" id="phoneNumber" name="phoneNumber" required pattern="[0-9]{10}" title="Please enter a 10-digit phone number">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email (Optional):</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="deliveryArea">Delivery Area in Vijayawada:</label>
+                            <select id="deliveryArea" name="deliveryArea" required>
+                                <option value="">Select your area</option>
+                                <option value="Benz Circle">Benz Circle</option>
+                                <option value="Gandhi Nagar">Gandhi Nagar</option>
+                                <option value="Moghalrajpuram">Moghalrajpuram</option>
+                                <option value="Bhavanipuram">Bhavanipuram</option>
+                                <option value="Gannavaram">Gannavaram (Limited Delivery)</option>
+                                <option value="Penamaluru">Penamaluru (Limited Delivery)</option>
+                                <option value="Other">Other (Specify in Message)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Order / Enquiry Details:</label>
+                            <textarea id="message" name="message" rows="5" placeholder="e.g., 2 trays of white eggs, or 50 broiler chicks, or general inquiry about desi hens."></textarea>
+                        </div>
+                        <div class="form-group">
+    <label for="deliveryDateTime">Preferred Delivery Date & Time:</label>
+    <input type="datetime-local" id="deliveryDateTime" name="deliveryDateTime" required>
+</div>
+
+                        <button type="submit" class="btn btn-primary">Submit Order / Enquiry</button>
+                        <p id="formMessage" class="form-message"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <img src="images/farm_logo_white.png" alt="Farm Fresh Eggs Logo">
+                <span>Farm Fresh</span>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Our Farm</a></li>
+                    <li><a href="#products">Eggs</a></li>
+                    <li><a href="#poultry">Poultry</a></li>
+                    <li><a href="#delivery-section-id">Delivery Info</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>📞 +91 8790869351</p>
+                <p>📧 tirumalareddyvenkat5@gmail.com</p>
+                <p>📍 Vijayawada, Andhra Pradesh, India</p>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <a href="#"><img src="images/facebook_icon.png" alt="Facebook"></a>
+                <a href="#"><img src="images/instagram_icon.png" alt="Instagram"></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Your Farm Name. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
